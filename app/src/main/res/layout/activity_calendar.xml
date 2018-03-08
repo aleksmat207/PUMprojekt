@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.am.projektpum.MyCalendar">
+
+    <Button
+        android:id="@+id/btnMMup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/MM"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/MM"
+        android:background="@drawable/ic_expand_less_black_24dp" />
+
+    <TextView
+        android:id="@+id/MM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@+id/btnMMdown"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/btnMMup"
+        android:layout_marginEnd="24dp"
+        android:text="12"
+        android:textSize="132sp" />
+
+    <Button
+        android:id="@+id/btnDDdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignEnd="@+id/DD"
+        android:layout_alignStart="@+id/DD"
+        android:layout_below="@+id/DD"
+        android:background="@drawable/ic_expand_more_black_24dp" />
+
+    <Button
+        android:id="@+id/btnDDup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/DD"
+        android:layout_alignStart="@+id/DD"
+
+        android:background="@drawable/ic_expand_less_black_24dp" />
+
+    <TextView
+        android:id="@+id/DD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnDDup"
+        android:layout_marginStart="23dp"
+        android:text="04"
+        android:textSize="120sp" />
+
+    <Button
+        android:id="@+id/btnMMdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignEnd="@+id/MM"
+        android:layout_alignStart="@+id/MM"
+        android:layout_below="@+id/DD"
+        android:background="@drawable/ic_expand_more_black_24dp" />
+
+    <TextView
+        android:id="@+id/YYYY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnDDdown"
+        android:layout_centerHorizontal="true"
+        android:text="2018"
+        android:textSize="100sp" />
+
+    <Button
+        android:id="@+id/btnleft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/YYYY"
+
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnDDdown"
+        android:background="@drawable/ic_chevron_left_black_24dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignBottom="@+id/YYYY"
+        android:layout_alignParentEnd="true"
+
+        android:layout_below="@+id/btnMMdown"
+        android:background="@drawable/ic_chevron_right_black_24dp"
+        android:id="@+id/right" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_add_black" />
+</RelativeLayout>

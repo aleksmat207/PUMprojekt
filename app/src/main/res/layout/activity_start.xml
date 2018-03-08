@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.am.projektpum.Start">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_marginTop="20dp"
+    android:layout_height="wrap_content"
+    android:textStyle="bold"
+    android:fontFamily="sans-serif-smallcaps"
+    android:textSize="40dp"
+    android:textColor="@color/textColor"
+    android:text="Wybierz preferowany rodzaj widoku"
+    android:gravity="center"/>
+
+    <Button
+        android:id="@+id/charIcon"
+        android:layout_width="348dp"
+        android:layout_height="181dp"
+        android:layout_gravity="center"
+
+
+        android:background="@drawable/ic_prosty_blue" />
+
+    <Button
+        android:id="@+id/imageIcon"
+        android:layout_width="349dp"
+        android:layout_height="176dp"
+        android:layout_gravity="center"
+
+        android:background="@drawable/ic_ikony_blue"
+
+        />
+
+
+
+
+</LinearLayout>
