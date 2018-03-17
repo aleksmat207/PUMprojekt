@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">projektPum</string>
+    <string name="app_name">MyCalendar</string>
+    <string-array name="my_array">
+        <item>Brak</item>
+        <item>Dzień przed</item>
+        <item>Godzinę przed</item>
+        <item>Na czas</item>
+
+
+    </string-array>
+
+
 </resources>

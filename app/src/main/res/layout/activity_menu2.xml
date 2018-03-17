@@ -11,23 +11,19 @@
         android:layout_width="159dp"
         android:layout_height="147dp"
         android:layout_gravity="center"
+        android:id="@+id/btnK"
         android:layout_marginTop="40dp"
-        android:background="@drawable/ic_litera_k" />
+        android:background="@drawable/ic_k_black" />
 
     <Button
-        android:layout_width="105dp"
-        android:layout_height="110dp"
+        android:layout_width="159dp"
+        android:layout_height="147dp"
         android:layout_gravity="center"
-        android:background="@drawable/ic_list"
+        android:background="@drawable/ic_n_black"
         android:layout_marginTop="50dp"
         />
 
-    <Button
-        android:layout_width="107dp"
-        android:layout_height="111dp"
-        android:layout_gravity="center"
-        android:background="@drawable/ic_shopping_cart"
-        android:layout_marginTop="50dp" />
+
 
 
 </LinearLayout>

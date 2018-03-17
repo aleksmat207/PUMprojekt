@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.example.am.projektpum.Note">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tytuł:"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/edTitle"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Treść:"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/edNote"
+        android:layout_height="wrap_content" />
+ <TextView
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="Przypomnienie"/>
+
+    <Spinner
+        android:layout_width="fill_parent"
+        android:id="@+id/spinnerNotifyTime"
+        android:layout_height="wrap_content">
+
+    </Spinner>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="gotowe!"
+        android:id="@+id/btnAddNote"/>
+
+    "
+</LinearLayout>

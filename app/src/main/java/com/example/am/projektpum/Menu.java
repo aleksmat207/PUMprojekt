@@ -20,7 +20,7 @@ public class Menu extends AppCompatActivity {
 
                 Intent intent = new Intent(Menu.this, MyCalendar.class);
                 startActivity(intent);
-            }
-        });
+    }
+});
     }
 }
