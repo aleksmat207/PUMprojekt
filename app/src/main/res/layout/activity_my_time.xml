@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.am.projektpum.MyTime">
+
+    <Button
+        android:layout_width="800dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/HH"
+        android:layout_toStartOf="@+id/textView3"
+        android:background="@drawable/ic_expand_more_black_24dp"
+        android:id="@+id/button" />
+
+    <Button
+        android:layout_width="800dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/minute"
+        android:layout_toEndOf="@+id/textView3"
+        android:background="@drawable/ic_expand_more_black_24dp"
+        android:id="@+id/button2" />
+
+    <Button
+        android:id="@+id/HHup"
+        android:layout_width="800dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/minute"
+        android:layout_toStartOf="@+id/textView3"
+        android:background="@drawable/ic_expand_less_black_24dp" />
+
+    <Button
+        android:layout_width="800dp"
+        android:layout_height="100dp"
+
+
+        android:layout_above="@+id/minute"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView3"
+        android:background="@drawable/ic_expand_less_black_24dp" />
+    <TextView
+        android:id="@+id/HH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="130dp"
+        android:layout_toStartOf="@+id/textView3"
+        android:text="00"
+        android:textSize="140sp" />
+
+    <TextView
+        android:id="@+id/minute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3"
+        android:text="00"
+        android:textSize="140sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/HH"
+        android:layout_alignBottom="@+id/HH"
+        android:layout_centerHorizontal="true"
+        android:text=":"
+        android:textSize="150sp"
+        android:id="@+id/textView3" />
+
+</RelativeLayout>

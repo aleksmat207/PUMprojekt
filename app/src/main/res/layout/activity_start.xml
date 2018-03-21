@@ -23,7 +23,7 @@
         android:layout_height="181dp"
         android:layout_gravity="center"
 
-
+android:onClick="click"
         android:background="@drawable/ic_prosty_blue" />
 
     <Button
@@ -31,7 +31,7 @@
         android:layout_width="349dp"
         android:layout_height="176dp"
         android:layout_gravity="center"
-
+        android:onClick="click2"
         android:background="@drawable/ic_ikony_blue"
 
         />

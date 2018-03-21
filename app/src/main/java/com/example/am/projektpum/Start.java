@@ -6,29 +6,38 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Start extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.OnClick;
 
+public class Start extends AppCompatActivity {
+@BindView(R.id.charIcon)
+Button charIcon;
+    @BindView(R.id.imageIcon)
+    Button imageIcon;
+
+    @OnClick(R.id.charIcon)
+
+    public void click(View view) {
+
+        Intent intent = new Intent(Start.this, Menu2.class);
+        startActivity(intent);
+
+    }
+    @OnClick  (R.id.imageIcon)
+
+    public void click2(View view) {
+
+        Intent intent = new Intent(Start.this, Menu.class);
+        startActivity(intent);
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        Button charIcon = (Button) findViewById(R.id.charIcon);
-         Button imageIcon = (Button) findViewById(R.id.imageIcon);
-        imageIcon.setOnClickListener(new View.OnClickListener() {
-            public void onClick (View v) {
 
-                Intent intent = new Intent(Start.this, Menu.class);
-                startActivity(intent);
-            }
 
-        });
-        charIcon.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(Start.this, Menu2.class);
-                startActivity(intent);
-            }
 
-        });
     }
 
 }

@@ -120,6 +120,15 @@ final String myDay=Integer.toString(day);
                 startActivity(intent);
             }
         });
+
+        final Button btn_E = (Button) findViewById(R.id.btn_E);
+        btn_E.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MyCalendar.this, MyDay.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }

@@ -22,5 +22,13 @@ public class Menu extends AppCompatActivity {
                 startActivity(intent);
     }
 });
+        final Button btnShpList = (Button) findViewById(R.id.btnShpList);
+        btnShpList.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Menu.this, MyShoppingList.class);
+                startActivity(intent);
+            }
+        });
     }
 }
