@@ -102,20 +102,16 @@ android:text="02"
         android:id="@+id/btnAdd"
         android:layout_width="120dp"
         android:layout_height="120dp"
-
         android:layout_below="@+id/YYYY"
-        android:layout_marginStart="40dp"
-        android:layout_toEndOf="@+id/btnDDdown"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/ic_add_black" />
 
     <Button
-        android:id="@+id/btn_E"
-        android:layout_width="110dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/showDay"
+        android:text="przeglądaj"
+        android:layout_alignParentStart="true" />
 
-        android:layout_height="110dp"
-        android:layout_alignTop="@+id/btnAdd"
-        android:layout_toStartOf="@+id/YYYY"
-        android:background="@drawable/ic_e_black"
-
-        />
 </RelativeLayout>

@@ -1,29 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.am.projektpum.Menu2">
+    <TextView
+        android:id="@+id/text_what_to_do"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/lab"
+        android:text="Wybierz tryb"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_calendar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.46" />
 
     <Button
-        android:layout_width="159dp"
-        android:layout_height="147dp"
-        android:layout_gravity="center"
-        android:id="@+id/btnK"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/ic_k_black" />
+        android:id="@+id/btn_calendar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="click"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/black"
+        android:fontFamily="@font/lab"
+        android:gravity="center"
+        android:text="K"
+        android:textColor="@android:color/white"
+        android:textSize="75sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_shopping"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:layout_width="159dp"
-        android:layout_height="147dp"
-        android:layout_gravity="center"
-        android:background="@drawable/ic_n_black"
-        android:layout_marginTop="50dp"
-        />
+        android:id="@+id/btn_shopping"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="196dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="click2"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/black"
+        android:fontFamily="@font/lab"
+        android:text="L"
+        android:textColor="@android:color/white"
+        android:textSize="75sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_notes"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="76dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/iebieski"
+        android:fontFamily="@font/lab"
+        android:text="N"
+        android:onClick="click3"
+        android:textColor="@android:color/white"
+        android:textSize="75sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
-
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

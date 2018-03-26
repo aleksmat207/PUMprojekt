@@ -30,7 +30,8 @@ android:orientation="vertical"
         android:layout_toStartOf="@+id/textView2"
         android:inputType="date"
         android:text="PT"
-        android:textSize="80dp" />
+        android:textSize="80dp"
+        android:id="@+id/textView7" />
 
     <TextView
     android:id="@+id/textView2"
@@ -66,12 +67,24 @@ android:orientation="vertical"
         android:textSize="80dp" />
 
     <Button
-        android:layout_width="200dp"
-        android:layout_height="80dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/tresc"
         android:id="@+id/ArrowBack"
+        android:layout_width="190dp"
+        android:layout_height="80dp"
 
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center"
+        android:onClick="click"
+        android:text="back" />
 
-        android:gravity="center" />
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="190dp"
+        android:layout_height="80dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:onClick="click2"
+        android:text="edit" />
 </RelativeLayout>

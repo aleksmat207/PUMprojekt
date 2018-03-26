@@ -30,18 +30,10 @@
         android:layout_marginStart="39dp"
         android:inputType="date"
         android:text="PT"
+        android:fontFamily="@font/lal"
         android:textAlignment="center"
         android:textSize="80dp" />
 
-
-    <Spinner
-        android:id="@+id/spinnerNotifyTime"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/b">
-
-    </Spinner>
 
     <Button
         android:id="@+id/b"
@@ -50,55 +42,67 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/textView"
         android:layout_marginEnd="19dp"
+        android:onClick="click"
         android:background="@drawable/ic_access_time_black_24dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/button"
+        android:layout_alignBottom="@+id/button"
+        android:layout_marginEnd="12dp"
+        android:layout_toStartOf="@+id/button2"
+        android:background="@color/iebieski" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_marginBottom="17dp"
+        android:background="@color/green1" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textView6"
+        android:layout_centerHorizontal="true"
+        android:background="@color/red" />
+
+    <Button
+        android:id="@+id/btn_add_event_OK"
+        android:layout_width="75sp"
+        android:layout_height="75sp"
+android:onClick="click2
+"
+        android:layout_alignBottom="@+id/button"
+        android:layout_alignEnd="@+id/b"
+        android:background="@drawable/ic_add_black" />
+
+    <EditText
+
+        android:id="@+id/textView5"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinnerNotifyTime"
+        android:layout_above="@+id/textView6"
         android:layout_centerHorizontal="true"
         android:text="#TAG"
-        android:textSize="80dp"
-        android:id="@+id/textView5" />
+        android:fontFamily="@font/lab"
+        android:textSize="80dp" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView6"
-        android:layout_width="wrap_content"
+        android:layout_width="300sp"
 
         android:layout_height="wrap_content"
         android:layout_above="@+id/button4"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="24dp"
-        android:text="treść"
-        android:textSize="80dp" />
-
-    <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textView6"
-        android:background="@color/yellow"
-        android:id="@+id/button4" />
-    <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/textView5"
-        android:background="@color/green1"/>
-
-    <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/red" />
-
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignEnd="@+id/b"
-        android:layout_below="@+id/textView6"
-        android:background="@color/yellow"
-        android:text="OK"
-        android:id="@+id/btn_add_event_OK"/>
+        android:text="opis"
+        android:fontFamily="@font/lal"
+        android:textSize="50sp" />
 </RelativeLayout>

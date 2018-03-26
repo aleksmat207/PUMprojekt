@@ -8,20 +8,33 @@ import android.widget.Button;
 
 import java.util.Calendar;
 
-public class MyDay extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.OnClick;
 
+public class MyDay extends AppCompatActivity {
+    @BindView(R.id.ArrowBack)
+    Button ArrowBack;
+    @BindView(R.id.edit)
+    Button edit;
+    @OnClick(R.id.ArrowBack)
+
+    public void click(View view) {
+
+        Intent intent = new Intent(MyDay.this, MyCalendar.class);
+        startActivity(intent);
+
+    }
+    public void click2(View view) {
+
+        Intent intent = new Intent(MyDay.this, Note.class);
+        startActivity(intent);
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_day);
 
-        final Button ArrowBack = (Button) findViewById(R.id.ArrowBack);
-        ArrowBack.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
 
-                Intent intent = new Intent(MyDay.this, MyCalendar.class);
-                startActivity(intent);
-            }
-        });
     }
 }

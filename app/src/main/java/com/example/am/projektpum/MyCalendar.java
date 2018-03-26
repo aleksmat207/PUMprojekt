@@ -29,6 +29,8 @@ public class MyCalendar extends AppCompatActivity {
     Button btnMMdown =  findViewById(R.id.btnMMdown);
       Button btnMMup =  findViewById(R.id.btnMMup);
        Button btnleft =  findViewById(R.id.btnleft);
+       Button showDay=findViewById(R.id.showDay);
+       Button btnAdd= findViewById(R.id.btnAdd);
          Button right =  findViewById(R.id.right);
         final Calendar cal = Calendar.getInstance();
        // DateFormat df1=new SimpleDateFormat("dd");
@@ -112,7 +114,7 @@ final String myDay=Integer.toString(day);
             }
 
         });
-        final Button btnAdd = (Button) findViewById(R.id.btnAdd);
+
         btnAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -121,14 +123,14 @@ final String myDay=Integer.toString(day);
             }
         });
 
-        final Button btn_E = (Button) findViewById(R.id.btn_E);
-        btn_E.setOnClickListener(new View.OnClickListener() {
+        showDay.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 Intent intent = new Intent(MyCalendar.this, MyDay.class);
                 startActivity(intent);
             }
         });
+
     }
 
 }

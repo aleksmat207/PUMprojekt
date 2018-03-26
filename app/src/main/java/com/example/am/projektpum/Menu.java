@@ -6,29 +6,39 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import butterknife.BindView;
+import butterknife.OnClick;
+
 
 
 public class Menu extends AppCompatActivity {
+    @BindView(R.id.btnCalenar)
+    Button btnCalenar;
+    @BindView(R.id.btnShpList)
+    Button btnShpList;
+    @OnClick(R.id.btnShpList)
 
+    public void click(View view) {
+
+        Intent intent = new Intent(Menu.this, MyCalendar.class);
+        startActivity(intent);
+
+    }
+    @OnClick  (R.id.imageIcon)
+
+    public void click2(View view) {
+
+        Intent intent = new Intent(Menu.this, MyShoppingList.class);
+        startActivity(intent);
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        final Button btnCalendar = (Button) findViewById(R.id.btnCalenar);
-        btnCalendar.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
 
-                Intent intent = new Intent(Menu.this, MyCalendar.class);
-                startActivity(intent);
-    }
-});
-        final Button btnShpList = (Button) findViewById(R.id.btnShpList);
-        btnShpList.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
 
-                Intent intent = new Intent(Menu.this, MyShoppingList.class);
-                startActivity(intent);
-            }
-        });
+
+
     }
 }
