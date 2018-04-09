@@ -5,16 +5,12 @@ import android.content.Intent;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.Locale;
-
 import butterknife.BindView;
 
 public class SpeechRecognition extends AppCompatActivity {
@@ -27,9 +23,9 @@ Button btnClear;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_speech);
-        myText = (TextView) this.findViewById(R.id.myText);
-        btnSpeak = (Button) this.findViewById(R.id.btnSpeak);
-        btnClear = (Button) this.findViewById(R.id.btnClear);
+        myText =  this.findViewById(R.id.myText);
+        btnSpeak =  this.findViewById(R.id.btnSpeak);
+        btnClear =  this.findViewById(R.id.btnClear);
         btnSpeak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +42,6 @@ Button btnClear;
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 myText.setText("");
             }
         });
@@ -58,7 +53,8 @@ Button btnClear;
         if(requestCode == 200){
             if(resultCode == RESULT_OK && data != null){
                 ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                myText.setText(result.get(0));
+               String wordsResult= result.get(0);
+                myText.setText(wordsResult);
             }
         }
     }

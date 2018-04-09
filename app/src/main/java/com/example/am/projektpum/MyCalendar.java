@@ -29,6 +29,7 @@ public class MyCalendar extends AppCompatActivity {
     Button btnMMdown =  findViewById(R.id.btnMMdown);
       Button btnMMup =  findViewById(R.id.btnMMup);
        Button btnleft =  findViewById(R.id.btnleft);
+       Button back=findViewById(R.id.back);
        Button showDay=findViewById(R.id.showDay);
        Button btnAdd= findViewById(R.id.btnAdd);
          Button right =  findViewById(R.id.right);
@@ -127,6 +128,13 @@ final String myDay=Integer.toString(day);
             public void onClick(View v) {
 
                 Intent intent = new Intent(MyCalendar.this, MyDay.class);
+                startActivity(intent);
+            }
+        });
+        back.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MyCalendar.this, Menu2.class);
                 startActivity(intent);
             }
         });

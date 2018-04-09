@@ -107,11 +107,19 @@ android:text="02"
         android:background="@drawable/ic_add_black" />
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/showDay"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:id="@+id/showDay"
-        android:text="przeglądaj"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:text="przeglądaj" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btnMMdown"
+        android:layout_alignParentBottom="true"
+        android:text="BACK" />
 
 </RelativeLayout>
