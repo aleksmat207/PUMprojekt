@@ -20,7 +20,7 @@
         </activity>
         <activity android:name=".Menu" />
         <activity android:name=".MyCalendar" />
-        <activity android:name=".Note" />
+        <activity android:name=".AddEvent" />
         <activity android:name=".MyDay" />
         <activity android:name=".MyTime" />
         <activity android:name=".MyShoppingList" />

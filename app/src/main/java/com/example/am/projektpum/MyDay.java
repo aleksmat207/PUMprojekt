@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.Calendar;
-
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -26,7 +24,7 @@ public class MyDay extends AppCompatActivity {
     }
     public void click2(View view) {
 
-        Intent intent = new Intent(MyDay.this, Note.class);
+        Intent intent = new Intent(MyDay.this, AddEvent.class);
         startActivity(intent);
 
     }

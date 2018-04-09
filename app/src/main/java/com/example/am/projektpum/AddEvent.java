@@ -4,16 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
-
-import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class Note extends AppCompatActivity {
+public class AddEvent extends AppCompatActivity {
     @BindView(R.id.b)
     Button b;
     @BindView(R.id.btn_add_event_OK)
@@ -23,7 +19,7 @@ public class Note extends AppCompatActivity {
 
     public void click(View view) {
 
-        Intent intent = new Intent(Note.this, MyTime.class);
+        Intent intent = new Intent(AddEvent.this, MyTime.class);
         startActivity(intent);
 
     }
@@ -31,7 +27,7 @@ public class Note extends AppCompatActivity {
 
     public void click2(View view) {
 
-        Intent intent = new Intent(Note.this, MyCalendar.class);
+        Intent intent = new Intent(AddEvent.this, MyCalendar.class);
         startActivity(intent);
 
     }

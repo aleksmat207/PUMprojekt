@@ -6,11 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
 public class MyCalendar extends AppCompatActivity {
@@ -21,97 +19,132 @@ public class MyCalendar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-         final TextView DD =  findViewById(R.id.DD);
+        final TextView DD =  findViewById(R.id.DD);
         final TextView MM =  findViewById(R.id.MM);
-       final TextView YYYY =  findViewById(R.id.YYYY);
-         Button btnDDdown =  findViewById(R.id.btnDDdown);
-     Button btnDDup =  findViewById(R.id.btnDDup);
-    Button btnMMdown =  findViewById(R.id.btnMMdown);
-      Button btnMMup =  findViewById(R.id.btnMMup);
+        final TextView YYYY =  findViewById(R.id.YYYY);
+        Button btnDDdown =  findViewById(R.id.btnDDdown);
+        Button btnDDup =  findViewById(R.id.btnDDup);
+        Button btnMMdown =  findViewById(R.id.btnMMdown);
+        Button btnMMup =  findViewById(R.id.btnMMup);
        Button btnleft =  findViewById(R.id.btnleft);
        Button back=findViewById(R.id.back);
        Button showDay=findViewById(R.id.showDay);
        Button btnAdd= findViewById(R.id.btnAdd);
          Button right =  findViewById(R.id.right);
         final Calendar cal = Calendar.getInstance();
-       // DateFormat df1=new SimpleDateFormat("dd");
-       // DateFormat df2=new SimpleDateFormat("mm");
-       // String myDay=df1.format((new Date()));
-       // String myMonth=df2.format((new Date()));
-        final int day=cal.get(Calendar.DAY_OF_MONTH);
-        int month=cal.get(Calendar.MONTH);
-        int year=cal.get(Calendar.YEAR);
-final String myDay=Integer.toString(day);
-        String myMonth=Integer.toString(month);
-        String myYear=Integer.toString(year);
+        DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
+        DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
+        DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
+
+        String myDay=dateFormat.format(cal.getTime());
+        String myMonth=dateFormatMonth.format(cal.getTime());
+        String myYear=dateFormatYear.format(cal.getTime());
         DD.setText(myDay);
         MM.setText(myMonth);
         YYYY.setText(myYear);
+
 
         btnDDdown.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
           //  int newDay=(day-1);
                 cal.add(Calendar.DATE, -1);
-                DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
-                String yesterdayAsString = dateFormat.format(cal.getTime());
 
-            DD.setText(yesterdayAsString);
+                DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
+                DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
+                DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
+                String yesterdayAsDay = dateFormat.format(cal.getTime());
+                String yesterdayAsMonth = dateFormatMonth.format(cal.getTime());
+                String yesterdayAsYear = dateFormatYear.format(cal.getTime());
+                DD.setText(yesterdayAsDay);
+                MM.setText(yesterdayAsMonth);
+                YYYY.setText(yesterdayAsYear);
             }
 
         });
         btnDDup.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
-                //  int newDay=(day-1);
+
                 cal.add(Calendar.DATE, +1);
                 DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
-                String yesterdayAsString = dateFormat.format(cal.getTime());
+                DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
+                DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
+                String yesterdayAsDay = dateFormat.format(cal.getTime());
+                String yesterdayAsMonth = dateFormatMonth.format(cal.getTime());
+                String yesterdayAsYear = dateFormatYear.format(cal.getTime());
 
-                DD.setText(yesterdayAsString);
+
+                DD.setText(yesterdayAsDay);
+                MM.setText(yesterdayAsMonth);
+                YYYY.setText(yesterdayAsYear);
             }
 
         });
 
         btnMMdown.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
-                //  int newDay=(day-1);
                 cal.add(Calendar.MONTH,-1);
-                DateFormat dateFormat = new SimpleDateFormat("MM", Locale.getDefault());
-                String yesterdayAsString = dateFormat.format(cal.getTime());
+                DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
+                DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
+                DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
+                String yesterdayAsDay = dateFormat.format(cal.getTime());
+                String yesterdayAsMonth = dateFormatMonth.format(cal.getTime());
+                String yesterdayAsYear = dateFormatYear.format(cal.getTime());
 
-                MM.setText(yesterdayAsString);
+
+                DD.setText(yesterdayAsDay);
+                MM.setText(yesterdayAsMonth);
+                YYYY.setText(yesterdayAsYear);
             }
 
         });
         btnMMup.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
-                //  int newDay=(day-1);
                 cal.add(Calendar.MONTH, +1);
-                DateFormat dateFormat = new SimpleDateFormat("MM", Locale.getDefault());
-                String yesterdayAsString = dateFormat.format(cal.getTime());
+                DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
+                DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
+                DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
+                String yesterdayAsDay = dateFormat.format(cal.getTime());
+                String yesterdayAsMonth = dateFormatMonth.format(cal.getTime());
+                String yesterdayAsYear = dateFormatYear.format(cal.getTime());
 
-                MM.setText(yesterdayAsString);
+
+                DD.setText(yesterdayAsDay);
+                MM.setText(yesterdayAsMonth);
+                YYYY.setText(yesterdayAsYear);
             }
 
         });
         btnleft.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
-                //  int newDay=(day-1);
                 cal.add(Calendar.YEAR, -1);
-                DateFormat dateFormat = new SimpleDateFormat("yyyy", Locale.getDefault());
-                String yesterdayAsString = dateFormat.format(cal.getTime());
+                DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
+                DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
+                DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
+                String yesterdayAsDay = dateFormat.format(cal.getTime());
+                String yesterdayAsMonth = dateFormatMonth.format(cal.getTime());
+                String yesterdayAsYear = dateFormatYear.format(cal.getTime());
 
-                YYYY.setText(yesterdayAsString);
+
+                DD.setText(yesterdayAsDay);
+                MM.setText(yesterdayAsMonth);
+                YYYY.setText(yesterdayAsYear);
             }
 
         });
         right.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
-                //  int newDay=(day-1);
                 cal.add(Calendar.YEAR, +1);
-                DateFormat dateFormat = new SimpleDateFormat("yyyy", Locale.getDefault());
-                String yesterdayAsString = dateFormat.format(cal.getTime());
+                DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
+                DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
+                DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
+                String yesterdayAsDay = dateFormat.format(cal.getTime());
+                String yesterdayAsMonth = dateFormatMonth.format(cal.getTime());
+                String yesterdayAsYear = dateFormatYear.format(cal.getTime());
 
-                YYYY.setText(yesterdayAsString);
+
+                DD.setText(yesterdayAsDay);
+                MM.setText(yesterdayAsMonth);
+                YYYY.setText(yesterdayAsYear);
             }
 
         });
@@ -119,7 +152,7 @@ final String myDay=Integer.toString(day);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                Intent intent = new Intent(MyCalendar.this, Note.class);
+                Intent intent = new Intent(MyCalendar.this, AddEvent.class);
                 startActivity(intent);
             }
         });
