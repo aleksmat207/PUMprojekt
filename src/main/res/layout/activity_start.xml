@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.am.projektpum.Start">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lal"
+        android:gravity="center"
+        android:text="WYBIERZ RODZAJ WIDOKU"
+        android:textColor="@color/textColor"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/charIcon"
+        android:layout_marginTop="50dp"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:onClick="click"
+        android:textSize="40dp"
+        android:text="PROSTY"
+        android:fontFamily="@font/lab"
+        android:textColor="#ffffff"
+        android:background="@color/black" />
+
+    <Button
+        android:id="@+id/imageIcon"
+        android:layout_marginTop="50dp"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:onClick="click"
+        android:textSize="40dp"
+        android:text="IKONY"
+        android:fontFamily="@font/lab"
+        android:textColor="#ffffff"
+        android:background="@color/black"
+        />
+
+
+
+
+</LinearLayout>
