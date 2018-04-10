@@ -43,7 +43,15 @@ public class MyCalendar extends AppCompatActivity {
         MM.setText(myMonth);
         YYYY.setText(myYear);
 
-
+//        Bundle b=new Bundle();
+//
+//        b.putString("key",cal);
+//
+//        Intent in=new Intent(getApplicationContext(),AddEvent.class);
+//
+//        in.putExtras(b);
+//
+//        startActivity(in);
         btnDDdown.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
           //  int newDay=(day-1);

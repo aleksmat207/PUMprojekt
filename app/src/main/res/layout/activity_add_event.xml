@@ -7,13 +7,14 @@
     tools:context="com.example.am.projektpum.AddEvent">
 
     <TextView
-        android:id="@+id/Date"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-
+        android:fontFamily="@font/lab"
+        android:textColor="@android:color/black"
         android:layout_gravity="center"
         android:layout_marginTop="0dp"
         android:inputType="date"
@@ -26,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/Date"
+        android:layout_below="@+id/textView"
         android:layout_marginStart="39dp"
         android:inputType="date"
         android:text="PT"
@@ -40,7 +41,7 @@
         android:layout_width="120dp"
         android:layout_height="110dp"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/Date"
+        android:layout_below="@+id/textView"
         android:layout_marginEnd="19dp"
         android:onClick="click"
         android:background="@drawable/ic_access_time_black_24dp" />
@@ -77,7 +78,7 @@
         android:id="@+id/btn_add_event_OK"
         android:layout_width="75sp"
         android:layout_height="75sp"
-android:onClick="click2"
+        android:onClick="click2"
         android:layout_alignBottom="@+id/button"
         android:layout_alignEnd="@+id/b"
         android:background="@drawable/ic_add_black" />

@@ -46,6 +46,7 @@ public class AddEvent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_event);
 
+
 //        Spinner s = (Spinner) findViewById(R.id.spinnerNotifyTime);
 //        ArrayAdapter<CharSequence> adapter =  ArrayAdapter.createFromResource(this,
 //                R.array.my_array, android.R.layout.simple_spinner_item);

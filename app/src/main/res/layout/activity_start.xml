@@ -1,42 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.am.projektpum.Start">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_marginTop="20dp"
-    android:layout_height="wrap_content"
-    android:textStyle="bold"
-    android:fontFamily="sans-serif-smallcaps"
-    android:textSize="40dp"
-    android:textColor="@color/textColor"
-    android:text="Wybierz preferowany rodzaj widoku"
-    android:gravity="center"/>
+    <LinearLayout tools:context="com.example.am.projektpum.Start" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Button
-        android:id="@+id/charIcon"
-        android:layout_width="348dp"
-        android:layout_height="181dp"
-        android:layout_gravity="center"
+    <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:textStyle="bold" android:textSize="40dp" android:textColor="@color/textColor" android:text="WYBIERZ RODZAJ WIDOKU" android:gravity="center" android:fontFamily="@font/lal" android:layout_marginTop="20dp"/>
 
-android:onClick="click"
-        android:background="@drawable/ic_prosty_blue" />
+    <Button android:layout_height="100dp" android:layout_width="250dp" android:textSize="40dp" android:textColor="#ffffff" android:text="PROSTY" android:fontFamily="@font/lab" android:layout_marginTop="50dp" android:background="@color/black" android:onClick="click" android:layout_gravity="center" android:id="@+id/charIcon"/>
 
-    <Button
-        android:id="@+id/imageIcon"
-        android:layout_width="349dp"
-        android:layout_height="176dp"
-        android:layout_gravity="center"
-        android:onClick="click2"
-        android:background="@drawable/ic_ikony_blue"
-
-        />
-
-
-
+    <Button android:layout_height="100dp" android:layout_width="250dp" android:textSize="40dp" android:textColor="#ffffff" android:text="IKONY" android:fontFamily="@font/lab" android:layout_marginTop="50dp" android:background="@color/black" android:onClick="click" android:layout_gravity="center" android:id="@+id/imageIcon"/>
 
 </LinearLayout>

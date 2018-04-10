@@ -1,32 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.am.projektpum.SpeechRecognition">
+<?xml version="1.0" encoding="UTF-8"?>
 
-    <Button
-        android:layout_width="match_parent"
-        android:id="@+id/btnSpeak"
-        android:text="Speak"
+    <LinearLayout tools:context="com.example.am.projektpum.SpeechRecognition" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
 
-        android:layout_height= "wrap_content"/>
+    <Button android:layout_height="150dp" android:layout_width="150dp" android:background="@drawable/ic_microphone" android:height="150dp" android:id="@+id/btnSpeak" android:layout_gravity="center" android:layout_marginTop="25dp"/>
 
+    <TextView android:layout_height="50dp" android:layout_width="match_parent" android:id="@+id/myText" android:textAlignment="center" android:textSize="22dp" android:fontFamily="@font/lal"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/myText"/>
-    <Button
-    android:text="wyszukaj w Notatkach"
-    android:id="@+id/btnSearch"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
-    <Button
-        android:text="usuń"
-        android:id="@+id/btnClear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <Button android:layout_height="100dp" android:layout_width="250dp" android:background="@color/black" android:id="@+id/btnSearch" android:layout_gravity="center" android:layout_marginTop="10dp" android:textSize="40dp" android:fontFamily="@font/lab" android:textColor="#ffffff" android:text="SZUKAJ"/>
+
+    <Button android:layout_height="100dp" android:layout_width="250dp" android:background="@color/black" android:id="@+id/btnClear" android:layout_gravity="center" android:layout_marginTop="10dp" android:textSize="40dp" android:fontFamily="@font/lab" android:textColor="#ffffff" android:text="USUŃ"/>
+
 </LinearLayout>

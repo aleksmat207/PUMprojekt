@@ -1,13 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <resources>
+
     <color name="colorPrimary">#db1818</color>
+
     <color name="colorPrimaryDark">#941111</color>
+
     <color name="colorAccent">#ffe240</color>
+
     <color name="textColor">#282829</color>
+
     <color name="iebieski">#003399</color>
+
     <color name="green1">#29811f</color>
+
     <color name="yellow">#ffe923</color>
+
     <color name="red">#cf0d0d</color>
 
+    <color name="white">#ffffff</color>
+
+    <color name="black">#000000</color>
+
+    <color name="ikonowy">#CB4C40</color>
 
 </resources>
