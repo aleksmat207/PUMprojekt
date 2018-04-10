@@ -31,7 +31,7 @@ public class MyCalendar extends AppCompatActivity {
        Button showDay=findViewById(R.id.showDay);
        Button btnAdd= findViewById(R.id.btnAdd);
          Button right =  findViewById(R.id.right);
-        final Calendar cal = Calendar.getInstance();
+         final Calendar cal = Calendar.getInstance();
         DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
         DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
         DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
@@ -58,6 +58,7 @@ public class MyCalendar extends AppCompatActivity {
                 DD.setText(yesterdayAsDay);
                 MM.setText(yesterdayAsMonth);
                 YYYY.setText(yesterdayAsYear);
+
             }
 
         });
