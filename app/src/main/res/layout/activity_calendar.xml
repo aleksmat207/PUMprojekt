@@ -1,29 +1,123 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-    <RelativeLayout tools:context="com.example.am.projektpum.MyCalendar" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.am.projektpum.MyCalendar">
 
-    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/ic_expand_less_black_24dp" android:layout_alignStart="@+id/MM" android:layout_alignParentTop="true" android:layout_alignEnd="@+id/MM" android:id="@+id/btnMMup"/>
+    <Button
+        android:id="@+id/btnMMup"
+        android:layout_width="80sp"
+        android:layout_height="40sp"
+        android:layout_above="@+id/DD"
+        android:layout_alignStart="@+id/btnMMdown"
+        android:background="@drawable/ic_arrowup" />
 
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/MM" android:textSize="120sp" android:text="12" android:layout_marginEnd="24dp" android:layout_below="@+id/btnMMup" android:layout_alignParentEnd="true" android:layout_above="@+id/btnMMdown"/>
+    <TextView
+        android:id="@+id/MM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lab"
+        android:layout_above="@+id/btnMMdown"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/btnMMup"
+        android:layout_marginEnd="24dp"
+        android:text="12"
+        android:textSize="120sp" />
 
-    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/ic_expand_more_black_24dp" android:layout_alignStart="@+id/DD" android:layout_alignEnd="@+id/DD" android:id="@+id/btnDDdown" android:layout_below="@+id/DD"/>
+    <Button
+        android:id="@+id/btnDDdown"
+        android:layout_width="80sp"
+        android:layout_height="40sp"
+        android:layout_alignStart="@+id/btnDDup"
+        android:layout_below="@+id/DD"
+        android:background="@drawable/ic_arrowdown" />
 
-    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/ic_expand_less_black_24dp" android:layout_alignStart="@+id/DD" android:layout_alignEnd="@+id/DD" android:id="@+id/btnDDup"/>
+    <Button
+        android:id="@+id/btnDDup"
+        android:layout_width="80sp"
+        android:layout_height="40sp"
 
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/DD" android:textSize="120sp" android:text="02" android:layout_below="@+id/btnDDup" android:layout_marginStart="24dp" android:layout_alignParentStart="true"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="23dp"
+        android:layout_toStartOf="@+id/btnAdd"
+        android:background="@drawable/ic_arrowup" />
 
-    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/ic_expand_more_black_24dp" android:layout_alignStart="@+id/MM" android:layout_alignEnd="@+id/MM" android:id="@+id/btnMMdown" android:layout_below="@+id/DD"/>
+    <TextView
+        android:id="@+id/DD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="02"
+        android:fontFamily="@font/lab"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnDDup"
+        android:layout_marginStart="24dp"
 
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/YYYY" android:textSize="100sp" android:text="2018" android:layout_below="@+id/btnDDdown" android:layout_centerHorizontal="true"/>
+        android:textSize="120sp" />
 
-    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/ic_chevron_left_black_24dp" android:id="@+id/btnleft" android:layout_below="@+id/btnDDdown" android:layout_alignParentStart="true" android:layout_alignBottom="@+id/YYYY"/>
-    120
-    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/ic_chevron_right_black_24dp" android:id="@+id/right" android:layout_below="@+id/btnMMdown" android:layout_alignParentEnd="true" android:layout_alignBottom="@+id/YYYY"/>
+    <Button
+        android:id="@+id/btnMMdown"
+        android:layout_width="80sp"
+        android:layout_height="40sp"
 
-    <Button android:layout_height="100dp" android:layout_width="100dp" android:background="@drawable/ic_add_sign" android:id="@+id/btnAdd" android:layout_below="@+id/YYYY" android:layout_centerHorizontal="true"/>
+        android:layout_above="@+id/YYYY"
+        android:layout_toEndOf="@+id/btnAdd"
+        android:background="@drawable/ic_arrowdown" />
 
-    <Button android:layout_height="90dp" android:layout_width="90dp" android:background="@drawable/ic_find2" android:layout_alignStart="@+id/btnDDdown" android:id="@+id/showDay" android:layout_alignBottom="@+id/btnAdd"/>
+    <TextView
+        android:id="@+id/YYYY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnDDdown"
+        android:layout_centerHorizontal="true"
+        android:text="2018"
+        android:fontFamily="@font/lab"
+        android:textSize="100sp" />
 
-    <Button android:layout_height="90dp" android:layout_width="90dp" android:background="@drawable/ic_back" android:layout_alignEnd="@+id/btnMMdown" android:id="@+id/back" android:layout_alignBottom="@+id/btnAdd"/>
+    <Button
+        android:id="@+id/btnleft"
+        android:layout_width="40sp"
+        android:layout_height="80sp"
+
+        android:layout_above="@+id/btnAdd"
+        android:layout_alignStart="@+id/DD"
+        android:layout_marginBottom="21dp"
+        android:background="@drawable/ic_arrowleft" />
+
+    <Button
+        android:id="@+id/right"
+        android:layout_width="40sp"
+
+
+        android:layout_height="80sp"
+        android:layout_alignEnd="@+id/MM"
+        android:layout_alignTop="@+id/btnleft"
+        android:background="@drawable/ic_arrowright" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/YYYY"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_add_sign" />
+
+    <Button
+        android:id="@+id/showDay"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignBottom="@+id/btnAdd"
+        android:layout_alignStart="@+id/btnleft"
+        android:background="@drawable/ic_find2" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+
+        android:layout_alignBottom="@+id/btnAdd"
+        android:layout_alignEnd="@+id/right"
+        android:background="@drawable/ic_back" />
 
 </RelativeLayout>

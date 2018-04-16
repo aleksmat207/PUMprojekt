@@ -23,6 +23,9 @@ public class AddEvent extends AppCompatActivity {
     Button btn_add_event_OK;
     @BindView(R.id.Date)
     TextView Date;
+    @BindView(R.id.content)
+    TextView Content;
+
 
 
     @OnClick(R.id.b)
@@ -38,6 +41,14 @@ public class AddEvent extends AppCompatActivity {
     public void click2(View view) {
 
         Intent intent = new Intent(AddEvent.this, MyCalendar.class);
+        startActivity(intent);
+
+    }
+    @OnClick(R.id.content)
+
+    public void click3(View view) {
+
+        Intent intent = new Intent(AddEvent.this, Edit.class);
         startActivity(intent);
 
     }

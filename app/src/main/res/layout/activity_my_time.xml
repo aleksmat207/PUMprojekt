@@ -4,73 +4,95 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.am.projektpum.MyTime">
+    tools:context="com.example.am.projektpum.MyCalendar">
 
     <Button
-        android:layout_width="800dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/HH"
-        android:layout_toStartOf="@+id/textView3"
-        android:background="@drawable/ic_expand_more_black_24dp"
-        android:id="@+id/button" />
+        android:id="@+id/btnMMup"
+        android:layout_width="80sp"
+        android:layout_height="40sp"
+        android:layout_above="@+id/DD"
+        android:layout_alignStart="@+id/btnMMdown"
+        android:background="@drawable/ic_arrowup" />
 
-    <Button
-        android:layout_width="800dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/minute"
-        android:layout_toEndOf="@+id/textView3"
-        android:background="@drawable/ic_expand_more_black_24dp"
-        android:id="@+id/button2" />
-
-    <Button
-        android:id="@+id/HHup"
-        android:layout_width="800dp"
-        android:layout_height="100dp"
-        android:layout_above="@+id/minute"
-        android:layout_toStartOf="@+id/textView3"
-        android:background="@drawable/ic_expand_less_black_24dp" />
-
-    <Button
-        android:layout_width="800dp"
-        android:layout_height="100dp"
-
-
-        android:layout_above="@+id/minute"
+    <TextView
+        android:id="@+id/MM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/textView3"
-        android:background="@drawable/ic_expand_less_black_24dp" />
-    <TextView
-        android:id="@+id/HH"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="39dp"
+        android:fontFamily="@font/lab"
+        android:text="12"
+        android:textSize="120sp" />
 
+    <Button
+        android:id="@+id/btnDDdown"
+        android:layout_width="80sp"
+        android:layout_height="40sp"
+        android:layout_below="@+id/MM"
+        android:layout_toStartOf="@+id/btnAdd"
+        android:background="@drawable/ic_arrowdown" />
 
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="130dp"
-        android:layout_toStartOf="@+id/textView3"
-        android:text="00"
-        android:textSize="140sp" />
+    <Button
+        android:id="@+id/btnDDup"
+        android:layout_width="80sp"
+        android:layout_height="40sp"
 
-    <TextView
-        android:id="@+id/minute"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_toEndOf="@+id/textView3"
-        android:text="00"
-        android:textSize="140sp" />
+        android:layout_above="@+id/DD"
+        android:layout_toStartOf="@+id/btnAdd"
+        android:background="@drawable/ic_arrowup" />
 
     <TextView
+        android:id="@+id/DD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/HH"
-        android:layout_alignBottom="@+id/HH"
+        android:layout_above="@+id/btnDDdown"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="31dp"
+
+        android:fontFamily="@font/lab"
+        android:text="02"
+        android:textSize="120sp" />
+
+    <TextView
+        android:id="@+id/separator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/MM"
+        android:layout_alignBottom="@+id/MM"
         android:layout_centerHorizontal="true"
+        android:fontFamily="@font/lal"
         android:text=":"
-        android:textSize="150sp"
-        android:id="@+id/textView3" />
+        android:textSize="120sp" />
+    <Button
+        android:id="@+id/btnMMdown"
+        android:layout_width="80sp"
+        android:layout_height="40sp"
+
+        android:layout_below="@+id/MM"
+        android:layout_toEndOf="@+id/btnAdd"
+        android:background="@drawable/ic_arrowdown" />
+
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp"
+        android:background="@drawable/ic_ok" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="300sp"
+        android:layout_height="100sp"
+        android:layout_above="@+id/btnMMup"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/lal"
+        android:textSize="60sp"
+        android:text="GODZINA" />
 
 </RelativeLayout>

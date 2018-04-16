@@ -54,6 +54,8 @@ Button btnClear;
             if(resultCode == RESULT_OK && data != null){
                 ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                String wordsResult= result.get(0);
+
+
                 myText.setText(wordsResult);
             }
         }
