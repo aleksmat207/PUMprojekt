@@ -10,7 +10,7 @@
         android:id="@+id/btnMMup"
         android:layout_width="80sp"
         android:layout_height="40sp"
-        android:layout_above="@+id/DD"
+        android:layout_above="@+id/HH"
         android:layout_alignStart="@+id/btnMMdown"
         android:background="@drawable/ic_arrowup" />
 
@@ -26,7 +26,7 @@
         android:textSize="120sp" />
 
     <Button
-        android:id="@+id/btnDDdown"
+        android:id="@+id/btnHHdown"
         android:layout_width="80sp"
         android:layout_height="40sp"
         android:layout_below="@+id/MM"
@@ -34,22 +34,22 @@
         android:background="@drawable/ic_arrowdown" />
 
     <Button
-        android:id="@+id/btnDDup"
+        android:id="@+id/btnHHup"
         android:layout_width="80sp"
         android:layout_height="40sp"
 
-        android:layout_above="@+id/DD"
+        android:layout_above="@+id/HH"
         android:layout_toStartOf="@+id/btnAdd"
         android:background="@drawable/ic_arrowup" />
 
     <TextView
-        android:id="@+id/DD"
+        android:id="@+id/HH"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnDDdown"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="31dp"
 
+        android:layout_alignBaseline="@+id/separator"
+        android:layout_alignBottom="@+id/separator"
+        android:layout_toStartOf="@+id/separator"
         android:fontFamily="@font/lab"
         android:text="02"
         android:textSize="120sp" />

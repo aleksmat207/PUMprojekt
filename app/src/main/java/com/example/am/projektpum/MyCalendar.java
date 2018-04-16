@@ -19,11 +19,11 @@ public class MyCalendar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        final TextView DD =  findViewById(R.id.DD);
+        final TextView DD =  findViewById(R.id.HH);
         final TextView MM =  findViewById(R.id.MM);
         final TextView YYYY =  findViewById(R.id.YYYY);
-        Button btnDDdown =  findViewById(R.id.btnDDdown);
-        Button btnDDup =  findViewById(R.id.btnDDup);
+        Button btnDDdown =  findViewById(R.id.btnHHdown);
+        Button btnDDup =  findViewById(R.id.btnHHup);
         Button btnMMdown =  findViewById(R.id.btnMMdown);
         Button btnMMup =  findViewById(R.id.btnMMup);
        Button btnleft =  findViewById(R.id.btnleft);

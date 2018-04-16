@@ -10,7 +10,7 @@
         android:id="@+id/btnMMup"
         android:layout_width="80sp"
         android:layout_height="40sp"
-        android:layout_above="@+id/DD"
+        android:layout_above="@+id/HH"
         android:layout_alignStart="@+id/btnMMdown"
         android:background="@drawable/ic_arrowup" />
 
@@ -27,15 +27,15 @@
         android:textSize="120sp" />
 
     <Button
-        android:id="@+id/btnDDdown"
+        android:id="@+id/btnHHdown"
         android:layout_width="80sp"
         android:layout_height="40sp"
-        android:layout_alignStart="@+id/btnDDup"
-        android:layout_below="@+id/DD"
+        android:layout_alignStart="@+id/btnHHup"
+        android:layout_below="@+id/HH"
         android:background="@drawable/ic_arrowdown" />
 
     <Button
-        android:id="@+id/btnDDup"
+        android:id="@+id/btnHHup"
         android:layout_width="80sp"
         android:layout_height="40sp"
 
@@ -45,13 +45,13 @@
         android:background="@drawable/ic_arrowup" />
 
     <TextView
-        android:id="@+id/DD"
+        android:id="@+id/HH"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="02"
         android:fontFamily="@font/lab"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnDDup"
+        android:layout_below="@+id/btnHHup"
         android:layout_marginStart="24dp"
 
         android:textSize="120sp" />
@@ -69,7 +69,7 @@
         android:id="@+id/YYYY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnDDdown"
+        android:layout_below="@+id/btnHHdown"
         android:layout_centerHorizontal="true"
         android:text="2018"
         android:fontFamily="@font/lab"
@@ -81,7 +81,7 @@
         android:layout_height="80sp"
 
         android:layout_above="@+id/btnAdd"
-        android:layout_alignStart="@+id/DD"
+        android:layout_alignStart="@+id/HH"
         android:layout_marginBottom="21dp"
         android:background="@drawable/ic_arrowleft" />
 
