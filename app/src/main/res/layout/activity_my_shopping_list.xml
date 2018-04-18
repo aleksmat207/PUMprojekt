@@ -2,12 +2,14 @@
 
     <LinearLayout tools:context="com.example.am.projektpum.MyShoppingList" android:layout_height="match_parent" android:orientation="vertical" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="50dp" android:text="WYBIERZ SKLEP" android:layout_gravity="center" android:textAlignment="center"/>
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="40dp"
+        android:fontFamily="@font/lab"
+        android:text="WYBIERZ SKLEP"
+        android:layout_gravity="center"
+        android:textAlignment="center"/>
 
-    <Button android:layout_height="wrap_content" android:layout_width="wrap_content"/>
 
-    <Button android:layout_height="wrap_content" android:layout_width="wrap_content"/>
 
-    <Button android:layout_height="90dp" android:layout_width="90dp" android:background="@drawable/ic_add_black"/>
-
-</LinearLayout>
+    </LinearLayout>
