@@ -1,13 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-    <LinearLayout tools:context="com.example.am.projektpum.SpeechRecognition" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout tools:context="com.example.am.projektpum.SpeechRecognition" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Button android:layout_height="150dp" android:layout_width="150dp" android:background="@drawable/ic_microphone" android:height="150dp" android:id="@+id/btnSpeak" android:layout_gravity="center" android:layout_marginTop="25dp"/>
+    <Button
+        android:id="@+id/btnSpeak"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_above="@+id/myText"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="66dp"
+        android:height="150dp"
+        android:background="@drawable/ic_microphone" />
 
-    <TextView android:layout_height="50dp" android:layout_width="match_parent" android:id="@+id/myText" android:textAlignment="center" android:textSize="22dp" android:fontFamily="@font/lal"/>
+    <TextView
+        android:id="@+id/myText"
+        android:layout_width="333dp"
+        android:layout_height="163dp"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/lal"
+        android:textAlignment="center"
+        android:textSize="26sp" />
 
-    <Button android:layout_height="100dp" android:layout_width="250dp" android:background="@color/black" android:id="@+id/btnSearch" android:layout_gravity="center" android:layout_marginTop="10dp" android:textSize="40dp" android:fontFamily="@font/lab" android:textColor="#ffffff" android:text="SZUKAJ"/>
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignBottom="@+id/btnSearch"
+        android:layout_alignEnd="@+id/myText"
+        android:background="@drawable/ic_add_sign" />
 
-    <Button android:layout_height="100dp" android:layout_width="250dp" android:background="@color/black" android:id="@+id/btnClear" android:layout_gravity="center" android:layout_marginTop="10dp" android:textSize="40dp" android:fontFamily="@font/lab" android:textColor="#ffffff" android:text="USUŃ"/>
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignTop="@+id/back"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_find2" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/back"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="17dp"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/ic_back" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_alignBaseline="@+id/btnSpeak"
+        android:layout_toEndOf="@+id/btnSearch"
+        android:background="@drawable/ic_clear_red" />
+</RelativeLayout>
