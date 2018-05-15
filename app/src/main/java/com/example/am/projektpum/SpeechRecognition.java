@@ -17,6 +17,7 @@ public class SpeechRecognition extends AppCompatActivity {
 Button btnSpeak;
 TextView myText;
 Button btnClear;
+Button back;
 
 
     @Override
@@ -26,6 +27,16 @@ Button btnClear;
         myText =  this.findViewById(R.id.myText);
         btnSpeak =  this.findViewById(R.id.btnSpeak);
         btnClear =  this.findViewById(R.id.btnClear);
+        back =  this.findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SpeechRecognition.this, Menu2.class);
+                startActivity(intent);
+            }
+        });
+
         btnSpeak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

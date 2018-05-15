@@ -27,7 +27,6 @@ public class AddEvent extends AppCompatActivity {
     TextView Content;
 
 
-
     @OnClick(R.id.b)
 
     public void click(View view) {
@@ -36,22 +35,21 @@ public class AddEvent extends AppCompatActivity {
         startActivity(intent);
 
     }
+
     @OnClick(R.id.btn_add_event_OK)
-
     public void click2(View view) {
-
         Intent intent = new Intent(AddEvent.this, MyCalendar.class);
         startActivity(intent);
-
     }
-    @OnClick(R.id.content)
 
+    @OnClick(R.id.content)
     public void click3(View view) {
 
         Intent intent = new Intent(AddEvent.this, Edit.class);
         startActivity(intent);
 
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,9 +61,6 @@ public class AddEvent extends AppCompatActivity {
 //                R.array.my_array, android.R.layout.simple_spinner_item);
 //        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 //        s.setAdapter(adapter);
-
-
-
 
 
     }

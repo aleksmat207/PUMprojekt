@@ -4,12 +4,11 @@
 
     <Button
         android:id="@+id/btnSpeak"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
         android:layout_above="@+id/myText"
-        android:layout_alignParentStart="true"
+        android:layout_alignStart="@+id/myText"
         android:layout_gravity="center"
-        android:layout_marginStart="66dp"
         android:height="150dp"
         android:background="@drawable/ic_microphone" />
 
@@ -50,9 +49,10 @@
 
     <Button
         android:id="@+id/btnClear"
-        android:layout_width="100sp"
+        android:layout_width="150sp"
         android:layout_height="100sp"
-        android:layout_alignBaseline="@+id/btnSpeak"
-        android:layout_toEndOf="@+id/btnSearch"
+        android:layout_above="@+id/myText"
+        android:layout_alignEnd="@+id/myText"
+        android:layout_alignTop="@+id/btnSpeak"
         android:background="@drawable/ic_clear_red" />
 </RelativeLayout>
