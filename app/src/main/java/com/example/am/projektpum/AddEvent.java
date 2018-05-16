@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -16,45 +17,59 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 public class AddEvent extends AppCompatActivity {
-
-    @BindView(R.id.b)
-    Button b;
-    @BindView(R.id.btn_add_event_OK)
-    Button btn_add_event_OK;
-    @BindView(R.id.Date)
-    TextView Date;
-    @BindView(R.id.content)
-    TextView Content;
+TextView Date, content;
+Button btn_add_event_OK,b;
 
 
-    @OnClick(R.id.b)
 
-    public void click(View view) {
-
-        Intent intent = new Intent(AddEvent.this, MyTime.class);
-        startActivity(intent);
-
-    }
-
-    @OnClick(R.id.btn_add_event_OK)
-    public void click2(View view) {
-        Intent intent = new Intent(AddEvent.this, MyCalendar.class);
-        startActivity(intent);
-    }
-
-    @OnClick(R.id.content)
-    public void click3(View view) {
-
-        Intent intent = new Intent(AddEvent.this, Edit.class);
-        startActivity(intent);
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_event);
+        Date=(TextView) findViewById(R.id.Date);
+        content=(TextView) findViewById(R.id.content);
+        btn_add_event_OK=(Button) findViewById(R.id.btn_add_event_OK);
+        b=(Button) findViewById(R.id.b);
+        final DataBaseHelper db = new DataBaseHelper(this);
 
+
+
+        //String d="15";
+        final String m="03";
+       // String y="2018";
+        //String myConcatedString  = d  + "." +  m + "."  + y;
+     //   Date.setText(myConcatedString);
+        btn_add_event_OK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean czysieudalo;
+
+                czysieudalo = db.wstawWydarzenie(Date.getText().toString(),m);
+                if (czysieudalo) {
+                    Toast.makeText(AddEvent.this, "Dodanie wydarzenia do bazy powiodło się", Toast.LENGTH_LONG).show();
+
+                } else {
+                    Toast.makeText(AddEvent.this, "Dodanie wydarzenia do bazy nie powiodło się", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddEvent.this, MyTime.class);
+                startActivity(intent);
+            }
+        });
+        content.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AddEvent.this, Edit.class);
+                startActivity(intent);
+            }
+        });
+
+    }
 
 //        Spinner s = (Spinner) findViewById(R.id.spinnerNotifyTime);
 //        ArrayAdapter<CharSequence> adapter =  ArrayAdapter.createFromResource(this,
@@ -64,4 +79,4 @@ public class AddEvent extends AppCompatActivity {
 
 
     }
-}
+

@@ -14,6 +14,8 @@ import java.util.Locale;
 public class MyCalendar extends AppCompatActivity {
 
 
+    public TextView Date;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,8 +82,6 @@ public class MyCalendar extends AppCompatActivity {
                 String yesterdayAsDay = dateFormat.format(cal.getTime());
                 String yesterdayAsMonth = dateFormatMonth.format(cal.getTime());
                 String yesterdayAsYear = dateFormatYear.format(cal.getTime());
-
-
                 DD.setText(yesterdayAsDay);
                 MM.setText(yesterdayAsMonth);
                 YYYY.setText(yesterdayAsYear);
@@ -98,8 +98,6 @@ public class MyCalendar extends AppCompatActivity {
                 String yesterdayAsDay = dateFormat.format(cal.getTime());
                 String yesterdayAsMonth = dateFormatMonth.format(cal.getTime());
                 String yesterdayAsYear = dateFormatYear.format(cal.getTime());
-
-
                 DD.setText(yesterdayAsDay);
                 MM.setText(yesterdayAsMonth);
                 YYYY.setText(yesterdayAsYear);
@@ -115,8 +113,6 @@ public class MyCalendar extends AppCompatActivity {
                 String yesterdayAsDay = dateFormat.format(cal.getTime());
                 String yesterdayAsMonth = dateFormatMonth.format(cal.getTime());
                 String yesterdayAsYear = dateFormatYear.format(cal.getTime());
-
-
                 DD.setText(yesterdayAsDay);
                 MM.setText(yesterdayAsMonth);
                 YYYY.setText(yesterdayAsYear);
@@ -159,12 +155,17 @@ public class MyCalendar extends AppCompatActivity {
         });
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                Intent intent = new Intent(MyCalendar.this, AddEvent.class);
-                startActivity(intent);
-            }
-        });
+                                      public void onClick(View v) {
+                                         // Date = (TextView) findViewById(R.id.Date);
+                                          Intent intent = new Intent(MyCalendar.this, AddEvent.class);
+                                         //// String g = DD.getText().toString();
+//                                          Date.setText(g);
+//                                          Bundle bundle = new Bundle();
+//                                          bundle.putString("item", g);
+//                                          intent.putExtras(bundle);
+                                          startActivity(intent);
+                                      }
+                                  });
 
         showDay.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

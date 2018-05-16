@@ -17,20 +17,23 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String database_table_sklepy = "Sklepy";
     public static final String database_table_wydarzenia = "Wydarzenia";
     public static final String database_table_tagi = "Tagi";
-    private static final String KEY_NOTES = "notatki";
-
+    private static final String KEY_WYDARZENIE = "wydarzenie";
     DataBaseHelper(Context context) {
-        super(context, "CalendarDB", null, 1);
+        super(context, "AppDB", null, 1);
     }
-
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(
-                "create table Notatki(" + "ID_Sklepu INTEGER PRIMARY KEY AUTOINCREMENT ," +
-                        KEY_NOTES +" TEXT," +
-                        "NAZWA INTEGER);" + "");
+        db.execSQL("create table Notatki(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT ," + "ID_TAGU INTEGER,"+
+                        "TRESC TEXT," + "DATA TEXT);" + "");
+        db.execSQL( "create table ListyZakupów(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT ," + "ID_SKLEPU INTEGER,"+
+                "PRODUKT TEXT);" + "");
+        db.execSQL( "create table Sklepy(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT ," +
+                "NAZWA TEXT);" + "");
+        db.execSQL( "create table Wydarzenia(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT ," + "ID_TAGU INTEGER," + "DATA STRING,"+
+                "OPIS TEXT);" + "");
+        db.execSQL( "create table Tagi(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT ," +
+                "OPIS TEXT);" + "");
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + database_table_listy_zakupow);
@@ -42,11 +45,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean wstawWydarzenie(String N, String L) {
+    public boolean wstawWydarzenie(String data, String opis) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-//        cv.put(KEY_NOTES, NAPOJ);
-//        cv.put("col", col);
+        cv.put("DATA", data);
+        cv.put("OPIS", opis);
 
         if (db.insert(database_table_wydarzenia, null, cv) == -1) {
             return false;
@@ -54,27 +57,37 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             return true;
         }
     }
-    public boolean wstawNotatke(String N, String L) {
+    public boolean wstawNotatke(String tresc) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-//        cv.put(KEY_NOTES, NAPOJ);
-//        cv.put("col", col);
+        cv.put("TRESC", tresc);
 
-        if (db.insert(database_table_wydarzenia, null, cv) == -1) {
+        if (db.insert(database_table_notatki, null, cv) == -1) {
             return false;
         } else {
             return true;
         }
     }
-    public boolean usunRekordy(String id){
+    public boolean usunWydarzenie(String id){
         SQLiteDatabase db =this.getWritableDatabase();
         if( db.delete(database_table_wydarzenia, "ID=?", new String[]{id })>0)
             return true;
         else return false;
     }
-//    public SQLiteCursor pobierzDane(){
-//        SQLiteDatabase db=this.getWritableDatabase();
-//        SQLiteCursor kursor= (SQLiteCursor) db.rawQuery("SELECT * FROM " + database_table_wydarzenia, null);
-//        return kursor;
-//    }
+    public boolean usunNotatke(String id){
+        SQLiteDatabase db =this.getWritableDatabase();
+        if( db.delete(database_table_notatki, "ID=?", new String[]{id })>0)
+            return true;
+        else return false;
+    }
+    public SQLiteCursor pobierzWydarzenie(){
+        SQLiteDatabase db=this.getWritableDatabase();
+        SQLiteCursor kursor= (SQLiteCursor) db.rawQuery("SELECT * FROM " + database_table_wydarzenia, null);
+        return kursor;
+    }
+    public SQLiteCursor pobierzNotatke(){
+        SQLiteDatabase db=this.getWritableDatabase();
+        SQLiteCursor kursor= (SQLiteCursor) db.rawQuery("SELECT * FROM " + database_table_notatki, null);
+        return kursor;
+    }
 }
