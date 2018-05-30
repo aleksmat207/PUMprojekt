@@ -29,7 +29,7 @@ public class Menu extends AppCompatActivity {
     }
     public void click2(View view) {
 
-        Intent intent = new Intent(Menu.this, SpeechRecognition.class);
+        Intent intent = new Intent(Menu.this, List_notes.class);
         startActivity(intent);
     }
     @Override
