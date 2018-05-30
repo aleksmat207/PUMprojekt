@@ -174,7 +174,7 @@ public class MyCalendar extends AppCompatActivity {
         showDay.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                Intent intent = new Intent(MyCalendar.this, MyDay.class);
+                Intent intent = new Intent(MyCalendar.this, List_events.class);
                 startActivity(intent);
             }
         });
