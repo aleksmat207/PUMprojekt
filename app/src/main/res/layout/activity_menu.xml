@@ -7,8 +7,8 @@
     tools:context="com.example.am.projektpum.Menu">
 
     <Button
-        android:layout_width="103dp"
-        android:layout_height="97dp"
+        android:layout_width="175sp"
+        android:layout_height="175sp"
         android:layout_gravity="center"
         android:id="@+id/btnCalenar"
         android:onClick="click"
@@ -16,23 +16,14 @@
         android:layout_marginTop="40dp" />
 
     <Button
-        android:layout_width="105dp"
-        android:layout_height="110dp"
+        android:layout_width="175sp"
+        android:layout_height="175sp"
+        android:onClick="click2"
         android:layout_gravity="center"
         android:background="@drawable/ic_list"
-        android:onClick="click2"
         android:layout_marginTop="50dp"
-        android:id="@+id/btnShpList"
+        android:id="@+id/btnList"
         />
-
-    <Button
-        android:layout_width="107dp"
-        android:layout_height="111dp"
-        android:layout_gravity="center"
-        android:onClick="click3"
-        android:id="@+id/btnSearch"
-        android:background="@drawable/ic_shopping_cart"
-        android:layout_marginTop="50dp" />
 
 
 </LinearLayout>

@@ -26,6 +26,7 @@ TextView myText;
 Button btnClear;
 Button back;
 Button btnSearch;
+Button btnAdd;
     private DataBaseHelper dbhelper ;
     private Cursor ourCursor;
 
@@ -33,29 +34,19 @@ Button btnSearch;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-        final String tag;
-        if (savedInstanceState == null) {
-            Bundle extras = getIntent().getExtras();
-
-            tag= extras.getString("item");
-
-        } else {
-            tag= (String) savedInstanceState.getSerializable("tag");
-
-        }
-
+        final DataBaseHelper db = new DataBaseHelper(this);
 
         setContentView(R.layout.activity_speech);
         myText =  this.findViewById(R.id.myText);
         btnSpeak =  this.findViewById(R.id.btnSpeak);
         btnClear =  this.findViewById(R.id.btnClear);
         back =  this.findViewById(R.id.back);
+        btnAdd=this.findViewById(R.id.btnAdd);
 btnSearch= this.findViewById(R.id.btnSearch);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SpeechRecognition.this, Menu2.class);
+                Intent intent = new Intent(SpeechRecognition.this, Menu.class);
                 startActivity(intent);
             }
         });
@@ -79,11 +70,30 @@ btnSearch= this.findViewById(R.id.btnSearch);
                 myText.setText("");
             }
         });
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                boolean czysieudalo;
+
+                czysieudalo = db.wstawNotatke(myText.getText().toString());
+                if (czysieudalo) {
+                    Toast.makeText(SpeechRecognition.this, "Dodanie notatki do bazy powiodło się", Toast.LENGTH_LONG).show();
+
+                } else {
+                    Toast.makeText(SpeechRecognition.this, "Dodanie notatki do bazy nie powiodło się", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+String Query="SELECT * FROM " + db.database_table_notatki +  " WHERE " + db.database_table_notatki + " LIKE " + myText.getText();
 
+            }
+        });
+//            public void onClick(View v) {
+//
 
 //                selection =  db.OPIS + " LIKE ?";
 //                String[] selectionArgs = new String[]{tag + '%'};
@@ -101,8 +111,8 @@ btnSearch= this.findViewById(R.id.btnSearch);
 //                        new String[]{"%" + tag + "%"},
 //                        ContactsContract.Contacts.DISPLAY_NAME + " ASC");
 
-            }
-        });
+
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

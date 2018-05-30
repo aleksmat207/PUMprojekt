@@ -181,7 +181,7 @@ public class MyCalendar extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                Intent intent = new Intent(MyCalendar.this, Menu2.class);
+                Intent intent = new Intent(MyCalendar.this, Menu.class);
                 startActivity(intent);
             }
         });

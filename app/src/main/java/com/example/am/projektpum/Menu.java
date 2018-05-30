@@ -14,11 +14,12 @@ import butterknife.OnClick;
 public class Menu extends AppCompatActivity {
     @BindView(R.id.btnCalenar)
     Button btnCalenar;
-    @BindView(R.id.btnShpList)
-    Button btnShpList;
-    @BindView(R.id.btnSearch)
-    Button btnSearch;
-    @OnClick(R.id.btnShpList)
+    @BindView(R.id.btnList)
+    Button btnList;
+
+
+
+
 
     public void click(View view) {
 
@@ -26,15 +27,7 @@ public class Menu extends AppCompatActivity {
         startActivity(intent);
 
     }
-
-
     public void click2(View view) {
-
-        Intent intent = new Intent(Menu.this, MyShoppingList.class);
-        startActivity(intent);
-
-    }
-    public void click3(View view) {
 
         Intent intent = new Intent(Menu.this, SpeechRecognition.class);
         startActivity(intent);
