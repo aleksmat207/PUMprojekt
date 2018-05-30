@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PUMPUM.iml" filepath="$PROJECT_DIR$/PUMPUM.iml" />
+      <module fileurl="file://C:\Users\am\Desktop\PUMprojekt\PUMPUM.iml" filepath="C:\Users\am\Desktop\PUMprojekt\PUMPUM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PUMprojekt.iml" filepath="$PROJECT_DIR$/PUMprojekt.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

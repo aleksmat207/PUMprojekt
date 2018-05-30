@@ -65,6 +65,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+    public int getEvent(String a) {
+        String Query = "SELECT  * FROM " + database_table_notatki+ " WHERE " + "TRESC" + " LIKE " + a;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(Query, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
     public boolean wstawNotatke(String tresc) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();

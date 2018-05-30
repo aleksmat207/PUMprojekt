@@ -23,6 +23,7 @@ import butterknife.BindView;
 public class SpeechRecognition extends AppCompatActivity {
 Button btnSpeak;
 TextView myText;
+TextView query;
 Button btnClear;
 Button back;
 Button btnSearch;
@@ -41,7 +42,9 @@ Button btnAdd;
         btnSpeak =  this.findViewById(R.id.btnSpeak);
         btnClear =  this.findViewById(R.id.btnClear);
         back =  this.findViewById(R.id.back);
+        query= this.findViewById(R.id.query);
         btnAdd=this.findViewById(R.id.btnAdd);
+
 btnSearch= this.findViewById(R.id.btnSearch);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,8 +91,8 @@ btnSearch= this.findViewById(R.id.btnSearch);
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-String Query="SELECT * FROM " + db.database_table_notatki +  " WHERE " + db.database_table_notatki + " LIKE " + myText.getText();
 
+db.getEvent(myText.getText().toString());
             }
         });
 //            public void onClick(View v) {
