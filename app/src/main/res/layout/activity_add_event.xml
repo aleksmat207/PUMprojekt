@@ -20,7 +20,7 @@
         android:inputType="date"
         android:text="09.03.18"
         android:textAlignment="center"
-        android:textSize="80dp" />
+        android:textSize="65sp" />
 
     <TextView
         android:id="@+id/textView4"

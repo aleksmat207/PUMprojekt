@@ -1,5 +1,6 @@
 package com.example.am.projektpum;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,7 @@ public class MyTime extends AppCompatActivity {
         Button btnHHdown =  findViewById(R.id.btnHHdown);
         Button btnHHup =  findViewById(R.id.btnHHup);
         Button btnMMdown =  findViewById(R.id.btnMMdown);
+        Button btnAdd=findViewById(R.id.btnAdd);
         Button btnMMup =  findViewById(R.id.btnMMup);
           final Calendar currentTime = Calendar.getInstance();
         SimpleDateFormat HHFormat = new SimpleDateFormat("HH");
@@ -80,6 +82,13 @@ public class MyTime extends AppCompatActivity {
                 String TimeMinut = minFormat.format(currentTime.getTime());
                 HH.setText(TimeHour);
                 MM.setText(TimeMinut);
+            }
+
+        });
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            public void onClick (View v) {
+                Intent intent = new Intent(MyTime.this, AddEvent.class);
+
             }
 
         });
