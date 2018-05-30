@@ -2,9 +2,14 @@ package com.example.am.projektpum;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
+
+import static android.provider.BlockedNumberContract.BlockedNumbers.COLUMN_ID;
 
 /**
  * Created by am on 18.04.2018.
@@ -23,6 +28,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         db.execSQL("create table Notatki(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT ," + "ID_TAGU INTEGER,"+
                         "TRESC TEXT," + "DATA TEXT);" + "");
         db.execSQL( "create table ListyZakupów(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT ," + "ID_SKLEPU INTEGER,"+
@@ -32,8 +38,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL( "create table Wydarzenia(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT ," + "ID_TAGU INTEGER," + "DATA STRING,"+
                 "OPIS TEXT);" + "");
         db.execSQL( "create table Tagi(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT ," +
-                "OPIS TEXT);" + "");
-    }
+                "OPIS TEXT);" + "");}
+
+
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + database_table_listy_zakupow);
@@ -90,4 +98,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteCursor kursor= (SQLiteCursor) db.rawQuery("SELECT * FROM " + database_table_notatki, null);
         return kursor;
     }
-}
+
+
+    }

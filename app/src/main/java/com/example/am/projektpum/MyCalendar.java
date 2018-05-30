@@ -36,6 +36,7 @@ public class MyCalendar extends AppCompatActivity {
          final Calendar cal = Calendar.getInstance();
         DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
         DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
+        DateFormat weekDay = new SimpleDateFormat("E",Locale.getDefault());
         DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
 
         String myDay=dateFormat.format(cal.getTime());
@@ -156,13 +157,16 @@ public class MyCalendar extends AppCompatActivity {
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
                                       public void onClick(View v) {
-                                         // Date = (TextView) findViewById(R.id.Date);
                                           Intent intent = new Intent(MyCalendar.this, AddEvent.class);
-                                         //// String g = DD.getText().toString();
-//                                          Date.setText(g);
-//                                          Bundle bundle = new Bundle();
-//                                          bundle.putString("item", g);
-//                                          intent.putExtras(bundle);
+                                          String d = DD.getText().toString();
+                                          Bundle bundle = new Bundle();
+                                          bundle.putString("item", d);
+                                          String m = MM.getText().toString();
+                                          bundle.putString("itemMonth", m);
+                                          String y= YYYY.getText().toString();
+
+                                          bundle.putString("itemYear", y);
+                                          intent.putExtras(bundle);
                                           startActivity(intent);
                                       }
                                   });

@@ -16,6 +16,8 @@ public class Menu extends AppCompatActivity {
     Button btnCalenar;
     @BindView(R.id.btnShpList)
     Button btnShpList;
+    @BindView(R.id.btnSearch)
+    Button btnSearch;
     @OnClick(R.id.btnShpList)
 
     public void click(View view) {
@@ -24,7 +26,7 @@ public class Menu extends AppCompatActivity {
         startActivity(intent);
 
     }
-    @OnClick  (R.id.imageIcon)
+
 
     public void click2(View view) {
 
@@ -32,10 +34,17 @@ public class Menu extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void click3(View view) {
+
+        Intent intent = new Intent(Menu.this, SpeechRecognition.class);
+        startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Stetho.initializeWithDefaults(this);
         setContentView(R.layout.activity_menu);
+
 
 
 

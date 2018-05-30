@@ -20,6 +20,7 @@
         android:layout_height="110dp"
         android:layout_gravity="center"
         android:background="@drawable/ic_list"
+        android:onClick="click2"
         android:layout_marginTop="50dp"
         android:id="@+id/btnShpList"
         />
@@ -28,7 +29,8 @@
         android:layout_width="107dp"
         android:layout_height="111dp"
         android:layout_gravity="center"
-        android:onClick="click2"
+        android:onClick="click3"
+        android:id="@+id/btnSearch"
         android:background="@drawable/ic_shopping_cart"
         android:layout_marginTop="50dp" />
 

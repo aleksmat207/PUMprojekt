@@ -18,34 +18,50 @@ import butterknife.OnClick;
 
 public class AddEvent extends AppCompatActivity {
 TextView Date, content;
-Button btn_add_event_OK,b;
-
-
-
+Button btn_add_event_OK,b, back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_event);
-        Date=(TextView) findViewById(R.id.Date);
-        content=(TextView) findViewById(R.id.content);
-        btn_add_event_OK=(Button) findViewById(R.id.btn_add_event_OK);
-        b=(Button) findViewById(R.id.b);
+        Date=findViewById(R.id.Date);
+        content= findViewById(R.id.content);
+        btn_add_event_OK= findViewById(R.id.btn_add_event_OK);
+        b= findViewById(R.id.b);
+        back= findViewById(R.id.back);
+
         final DataBaseHelper db = new DataBaseHelper(this);
 
+        String d,m,y,c;
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
 
+                d= extras.getString("item");
+                m= extras.getString("itemMonth");
+                y= extras.getString("itemYear");
+                c=extras.getString("edit");
+            //rezygnujemy z treści wydarzen? może same tytuły?
+        } else {
+            d= (String) savedInstanceState.getSerializable("item");
+            m= (String) savedInstanceState.getSerializable("itemMonth");
+            y= (String) savedInstanceState.getSerializable("itemYear");
+            c= (String) savedInstanceState.getSerializable("edit");
+        }
 
-        //String d="15";
-        final String m="03";
-       // String y="2018";
-        //String myConcatedString  = d  + "." +  m + "."  + y;
-     //   Date.setText(myConcatedString);
+        String myConcatedString  = d  + "." +  m + "."  + y;
+       Date.setText(myConcatedString);
+
         btn_add_event_OK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent();
+                String tag = content.getText().toString();
+                Bundle bundle = new Bundle();
+                intent.putExtras(bundle);
+                startActivity(intent);
                 boolean czysieudalo;
 
-                czysieudalo = db.wstawWydarzenie(Date.getText().toString(),m);
+                czysieudalo = db.wstawWydarzenie(Date.getText().toString(),content.getText().toString());
                 if (czysieudalo) {
                     Toast.makeText(AddEvent.this, "Dodanie wydarzenia do bazy powiodło się", Toast.LENGTH_LONG).show();
 
@@ -61,14 +77,13 @@ Button btn_add_event_OK,b;
                 startActivity(intent);
             }
         });
-        content.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddEvent.this, Edit.class);
+                Intent intent = new Intent(AddEvent.this, MyCalendar.class);
                 startActivity(intent);
             }
         });
-
     }
 
 //        Spinner s = (Spinner) findViewById(R.id.spinnerNotifyTime);

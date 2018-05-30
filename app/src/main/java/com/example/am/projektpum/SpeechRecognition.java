@@ -1,10 +1,17 @@
 package com.example.am.projektpum;
 
 import android.content.ActivityNotFoundException;
+import android.content.CursorLoader;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
+import android.provider.ContactsContract;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,17 +25,33 @@ Button btnSpeak;
 TextView myText;
 Button btnClear;
 Button back;
-
+Button btnSearch;
+    private DataBaseHelper dbhelper ;
+    private Cursor ourCursor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        final String tag;
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+
+            tag= extras.getString("item");
+
+        } else {
+            tag= (String) savedInstanceState.getSerializable("tag");
+
+        }
+
+
         setContentView(R.layout.activity_speech);
         myText =  this.findViewById(R.id.myText);
         btnSpeak =  this.findViewById(R.id.btnSpeak);
         btnClear =  this.findViewById(R.id.btnClear);
         back =  this.findViewById(R.id.back);
-
+btnSearch= this.findViewById(R.id.btnSearch);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +80,29 @@ Button back;
             }
         });
 
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+//                selection =  db.OPIS + " LIKE ?";
+//                String[] selectionArgs = new String[]{tag + '%'};
+//
+//                return new CursorLoader(this, articlesLoaderUri, ARTICLES_PROJECTION,
+//                        CacheContract.COLUMN_TITLE + " LIKE ?",
+//                        new String[] {mFilterTitle + '%'},
+//                        null);
+
+
+
+//                Cursor contactsContractContacts = resolver.query(
+//                        ContactsContract.Contacts.CONTENT_URI, projection,
+//                        ContactsContract.Contacts.DISPLAY_NAME + " like ?",
+//                        new String[]{"%" + tag + "%"},
+//                        ContactsContract.Contacts.DISPLAY_NAME + " ASC");
+
+            }
+        });
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
