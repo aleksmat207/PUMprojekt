@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <LinearLayout tools:context="com.example.am.projektpum.MyDay" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="80dp"
+        android:text="NOTATKI"
+        android:fontFamily="@font/lab"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" android:textAlignment="center"
+        android:id="@+id/TEKST"/>
+
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <Button
+        android:id="@+id/ArrowBack"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/ic_back"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:onClick="click" />
+
+</LinearLayout>
