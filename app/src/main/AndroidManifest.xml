@@ -18,14 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Menu2" />
+        <activity android:name=".Menu2" />44
         <activity android:name=".MyCalendar" />
         <activity android:name=".AddEvent" />
         <activity android:name=".MyDay" />
         <activity android:name=".MyTime" />
         <activity android:name=".MyShoppingList" />
         <activity android:name=".SpeechRecognition" />
-        <activity android:name=".Events_list" />
         <activity android:name=".Notes_list"></activity>
     </application>
 

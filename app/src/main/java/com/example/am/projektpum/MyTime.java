@@ -88,7 +88,7 @@ public class MyTime extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
                 Intent intent = new Intent(MyTime.this, AddEvent.class);
-
+                startActivity(intent);
             }
 
         });

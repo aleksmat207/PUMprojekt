@@ -1,24 +1,17 @@
 package com.example.am.projektpum;
 
 import android.content.ActivityNotFoundException;
-import android.content.CursorLoader;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteQueryBuilder;
-import android.provider.ContactsContract;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Locale;
-import butterknife.BindView;
 
 public class SpeechRecognition extends AppCompatActivity {
 Button btnSpeak;
@@ -28,8 +21,7 @@ Button btnClear;
 Button back;
 Button btnSearch;
 Button btnAdd;
-    private DataBaseHelper dbhelper ;
-    private Cursor ourCursor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,13 +70,17 @@ btnSearch= this.findViewById(R.id.btnSearch);
             public void onClick(View view) {
 
                 boolean czysieudalo;
+                if (myText.getText()!= "") {
+                    czysieudalo = db.FunAddNote(myText.getText().toString());
+                    if (czysieudalo) {
+                        Toast.makeText(SpeechRecognition.this, "Dodanie notatki do bazy powiodło się", Toast.LENGTH_LONG).show();
 
-                czysieudalo = db.wstawNotatke(myText.getText().toString());
-                if (czysieudalo) {
-                    Toast.makeText(SpeechRecognition.this, "Dodanie notatki do bazy powiodło się", Toast.LENGTH_LONG).show();
-
-                } else {
-                    Toast.makeText(SpeechRecognition.this, "Dodanie notatki do bazy nie powiodło się", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(SpeechRecognition.this, "Dodanie notatki do bazy nie powiodło się", Toast.LENGTH_LONG).show();
+                    }
+                }
+                else {
+                    Toast.makeText(SpeechRecognition.this, "W pierwszej kolejności wprowadź tekst", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -92,27 +88,18 @@ btnSearch= this.findViewById(R.id.btnSearch);
             @Override
             public void onClick(View view) {
 
-db.getEvent(myText.getText().toString());
+                if (myText.getText()!= "")
+                {
+            String a =myText.getText().toString();
+            db.getEvent(a);
+            db.getNote(a);
+                }
+            else {
+                    Toast.makeText(SpeechRecognition.this, "W pierwszej kolejności wprowadź tekst", Toast.LENGTH_LONG).show();
+                }
             }
         });
-//            public void onClick(View v) {
-//
 
-//                selection =  db.OPIS + " LIKE ?";
-//                String[] selectionArgs = new String[]{tag + '%'};
-//
-//                return new CursorLoader(this, articlesLoaderUri, ARTICLES_PROJECTION,
-//                        CacheContract.COLUMN_TITLE + " LIKE ?",
-//                        new String[] {mFilterTitle + '%'},
-//                        null);
-
-
-
-//                Cursor contactsContractContacts = resolver.query(
-//                        ContactsContract.Contacts.CONTENT_URI, projection,
-//                        ContactsContract.Contacts.DISPLAY_NAME + " like ?",
-//                        new String[]{"%" + tag + "%"},
-//                        ContactsContract.Contacts.DISPLAY_NAME + " ASC");
 
 
 

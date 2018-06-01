@@ -23,6 +23,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String database_table_wydarzenia = "Wydarzenia";
     public static final String database_table_tagi = "Tagi";
     private static final String KEY_WYDARZENIE = "wydarzenie";
+
+
+    private static final String ID = "ID";
+    private static final String DATA = "DATA";
+    private static final String OPIS = "OPIS";
+
+    private String[] allColumns = {COLUMN_ID, DATA, OPIS};
+
     DataBaseHelper(Context context) {
         super(context, "AppDB", null, 1);
     }
@@ -35,7 +43,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 "PRODUKT TEXT);" + "");
         db.execSQL( "create table Sklepy(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT ," +
                 "NAZWA TEXT);" + "");
-        db.execSQL( "create table Wydarzenia(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT ," + "ID_TAGU INTEGER," + "DATA STRING,"+
+        db.execSQL( "create table Wydarzenia(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT ," + "DATA STRING,"+
                 "OPIS TEXT);" + "");
         db.execSQL( "create table Tagi(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT ," +
                 "OPIS TEXT);" + "");}
@@ -53,7 +61,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean wstawWydarzenie(String data, String opis) {
+    public boolean FunAddEvent(String data, String opis) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("DATA", data);
@@ -66,15 +74,23 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
     }
     public int getEvent(String a) {
-        String Query = "SELECT  * FROM " + database_table_notatki+ " WHERE " + "TRESC" + " LIKE " + a;
+        String Query = "SELECT  * FROM " + database_table_wydarzenia+ " WHERE " + OPIS  + " LIKE '" +  a + "'";
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(Query, null);
+        SQLiteCursor cursor =(SQLiteCursor) db.rawQuery(Query, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+    public int getNote(String a) {
+        String Query = "SELECT  * FROM " + database_table_notatki+ " WHERE " + "TRESC"  + " LIKE '" +  a + "'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteCursor cursor =(SQLiteCursor) db.rawQuery(Query, null);
         int count = cursor.getCount();
         cursor.close();
         return count;
     }
 
-    public boolean wstawNotatke(String tresc) {
+    public boolean FunAddNote(String tresc) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("TRESC", tresc);
@@ -97,16 +113,4 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             return true;
         else return false;
     }
-    public SQLiteCursor pobierzWydarzenie(){
-        SQLiteDatabase db=this.getWritableDatabase();
-        SQLiteCursor kursor= (SQLiteCursor) db.rawQuery("SELECT * FROM " + database_table_wydarzenia, null);
-        return kursor;
-    }
-    public SQLiteCursor pobierzNotatke(){
-        SQLiteDatabase db=this.getWritableDatabase();
-        SQLiteCursor kursor= (SQLiteCursor) db.rawQuery("SELECT * FROM " + database_table_notatki, null);
-        return kursor;
-    }
-
-
     }

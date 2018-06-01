@@ -15,7 +15,6 @@ public class MyCalendar extends AppCompatActivity {
 
 
     public TextView Date;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +32,11 @@ public class MyCalendar extends AppCompatActivity {
        Button showDay=findViewById(R.id.showDay);
        Button btnAdd= findViewById(R.id.btnAdd);
          Button right =  findViewById(R.id.right);
-         final Calendar cal = Calendar.getInstance();
-        DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
-        DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
+        final Calendar cal = Calendar.getInstance();
+        final DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
+        final DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
         DateFormat weekDay = new SimpleDateFormat("E",Locale.getDefault());
-        DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
+        final DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
 
         String myDay=dateFormat.format(cal.getTime());
         String myMonth=dateFormatMonth.format(cal.getTime());
@@ -46,23 +45,11 @@ public class MyCalendar extends AppCompatActivity {
         MM.setText(myMonth);
         YYYY.setText(myYear);
 
-//        Bundle b=new Bundle();
-//
-//        b.putString("key",cal);
-//
-//        Intent in=new Intent(getApplicationContext(),AddEvent.class);
-//
-//        in.putExtras(b);
-//
-//        startActivity(in);
+        // singelton do data managera
         btnDDdown.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
           //  int newDay=(day-1);
                 cal.add(Calendar.DATE, -1);
-
-                DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
-                DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
-                DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
                 String yesterdayAsDay = dateFormat.format(cal.getTime());
                 String yesterdayAsMonth = dateFormatMonth.format(cal.getTime());
                 String yesterdayAsYear = dateFormatYear.format(cal.getTime());
@@ -77,9 +64,6 @@ public class MyCalendar extends AppCompatActivity {
             public void onClick (View v) {
 
                 cal.add(Calendar.DATE, +1);
-                DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
-                DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
-                DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
                 String yesterdayAsDay = dateFormat.format(cal.getTime());
                 String yesterdayAsMonth = dateFormatMonth.format(cal.getTime());
                 String yesterdayAsYear = dateFormatYear.format(cal.getTime());
@@ -93,9 +77,6 @@ public class MyCalendar extends AppCompatActivity {
         btnMMdown.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
                 cal.add(Calendar.MONTH,-1);
-                DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
-                DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
-                DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
                 String yesterdayAsDay = dateFormat.format(cal.getTime());
                 String yesterdayAsMonth = dateFormatMonth.format(cal.getTime());
                 String yesterdayAsYear = dateFormatYear.format(cal.getTime());
@@ -108,9 +89,6 @@ public class MyCalendar extends AppCompatActivity {
         btnMMup.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
                 cal.add(Calendar.MONTH, +1);
-                DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
-                DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
-                DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
                 String yesterdayAsDay = dateFormat.format(cal.getTime());
                 String yesterdayAsMonth = dateFormatMonth.format(cal.getTime());
                 String yesterdayAsYear = dateFormatYear.format(cal.getTime());
@@ -123,14 +101,9 @@ public class MyCalendar extends AppCompatActivity {
         btnleft.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
                 cal.add(Calendar.YEAR, -1);
-                DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
-                DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
-                DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
                 String yesterdayAsDay = dateFormat.format(cal.getTime());
                 String yesterdayAsMonth = dateFormatMonth.format(cal.getTime());
                 String yesterdayAsYear = dateFormatYear.format(cal.getTime());
-
-
                 DD.setText(yesterdayAsDay);
                 MM.setText(yesterdayAsMonth);
                 YYYY.setText(yesterdayAsYear);
@@ -140,14 +113,9 @@ public class MyCalendar extends AppCompatActivity {
         right.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
                 cal.add(Calendar.YEAR, +1);
-                DateFormat dateFormat = new SimpleDateFormat("dd", Locale.getDefault());
-                DateFormat dateFormatMonth = new SimpleDateFormat("MM", Locale.getDefault());
-                DateFormat dateFormatYear = new SimpleDateFormat("yyyy", Locale.getDefault());
                 String yesterdayAsDay = dateFormat.format(cal.getTime());
                 String yesterdayAsMonth = dateFormatMonth.format(cal.getTime());
                 String yesterdayAsYear = dateFormatYear.format(cal.getTime());
-
-
                 DD.setText(yesterdayAsDay);
                 MM.setText(yesterdayAsMonth);
                 YYYY.setText(yesterdayAsYear);
@@ -164,20 +132,12 @@ public class MyCalendar extends AppCompatActivity {
                                           String m = MM.getText().toString();
                                           bundle.putString("itemMonth", m);
                                           String y= YYYY.getText().toString();
-
                                           bundle.putString("itemYear", y);
                                           intent.putExtras(bundle);
                                           startActivity(intent);
                                       }
                                   });
 
-        showDay.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                Intent intent = new Intent(MyCalendar.this, List_events.class);
-                startActivity(intent);
-            }
-        });
         back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 

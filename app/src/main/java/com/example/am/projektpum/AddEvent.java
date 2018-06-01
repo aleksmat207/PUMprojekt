@@ -8,14 +8,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
-
-import butterknife.BindView;
-import butterknife.OnClick;
-
 public class AddEvent extends AppCompatActivity {
 TextView Date, content;
 Button btn_add_event_OK,b, back;
@@ -54,20 +46,19 @@ Button btn_add_event_OK,b, back;
         btn_add_event_OK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent();
-                String tag = content.getText().toString();
-                Bundle bundle = new Bundle();
-                intent.putExtras(bundle);
-                startActivity(intent);
-                boolean czysieudalo;
 
-                czysieudalo = db.wstawWydarzenie(Date.getText().toString(),content.getText().toString());
+                boolean czysieudalo;
+if(content.getText()!= ""){
+                czysieudalo = db.FunAddEvent(Date.getText().toString(),content.getText().toString());
                 if (czysieudalo) {
                     Toast.makeText(AddEvent.this, "Dodanie wydarzenia do bazy powiodło się", Toast.LENGTH_LONG).show();
 
                 } else {
                     Toast.makeText(AddEvent.this, "Dodanie wydarzenia do bazy nie powiodło się", Toast.LENGTH_LONG).show();
-                }
+                }}
+                else{
+    Toast.makeText(AddEvent.this, "w pierwszej kolejności wprowadź tekst", Toast.LENGTH_LONG).show();
+}
             }
         });
         b.setOnClickListener(new View.OnClickListener() {
