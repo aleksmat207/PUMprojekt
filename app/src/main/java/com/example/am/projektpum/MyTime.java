@@ -32,7 +32,16 @@ public class MyTime extends AppCompatActivity {
         String myHour=HHFormat.format(currentTime.getTime());
         String myMinute=MMFormat.format(currentTime.getTime());
         HH.setText(myHour);
-        MM.setText(myMinute);
+        MM.setText(myMinute);final String date;
+
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            date= extras.getString("newDate");
+        } else {
+            date= (String) savedInstanceState.getSerializable("newDate");
+
+        }
+
         btnHHdown.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
 
@@ -88,6 +97,9 @@ public class MyTime extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
                 Intent intent = new Intent(MyTime.this, AddEvent.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("newDate", date);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
 

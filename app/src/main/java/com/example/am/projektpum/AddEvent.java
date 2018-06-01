@@ -24,25 +24,35 @@ Button btn_add_event_OK,b, back;
 
         final DataBaseHelper db = new DataBaseHelper(this);
 
-        String d,m,y,c;
+        final String d, date;
+        String m;
+        String y;
+        final String c;
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
 
                 d= extras.getString("item");
                 m= extras.getString("itemMonth");
                 y= extras.getString("itemYear");
-                c=extras.getString("edit");
-            //rezygnujemy z treści wydarzen? może same tytuły?
+
         } else {
             d= (String) savedInstanceState.getSerializable("item");
             m= (String) savedInstanceState.getSerializable("itemMonth");
             y= (String) savedInstanceState.getSerializable("itemYear");
-            c= (String) savedInstanceState.getSerializable("edit");
         }
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            date= extras.getString("newDate");
 
-        String myConcatedString  = d  + "." +  m + "."  + y;
-       Date.setText(myConcatedString);
-
+        } else {
+            date= (String) savedInstanceState.getSerializable("newDate");
+        }
+        final String myConcatedString  = d  + "." +  m + "."  + y;
+        if(d!= null) {
+            Date.setText(myConcatedString);
+        }
+        else
+            Date.setText(date);
         btn_add_event_OK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +75,9 @@ if(content.getText()!= ""){
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AddEvent.this, MyTime.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("newDate", myConcatedString);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -76,13 +89,6 @@ if(content.getText()!= ""){
             }
         });
     }
-
-//        Spinner s = (Spinner) findViewById(R.id.spinnerNotifyTime);
-//        ArrayAdapter<CharSequence> adapter =  ArrayAdapter.createFromResource(this,
-//                R.array.my_array, android.R.layout.simple_spinner_item);
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        s.setAdapter(adapter);
-
 
     }
 
