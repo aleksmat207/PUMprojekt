@@ -74,7 +74,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
     }
     public int getEvent(String a) {
-        String Query = "SELECT  * FROM " + database_table_wydarzenia+ " WHERE " + OPIS  + " LIKE '" +  a + "'";
+        String Query = "SELECT  * FROM " + database_table_wydarzenia+ " WHERE " + OPIS  + " LIKE '%" +  a + "%'";
         SQLiteDatabase db = this.getReadableDatabase();
         SQLiteCursor cursor =(SQLiteCursor) db.rawQuery(Query, null);
         int count = cursor.getCount();
@@ -82,14 +82,21 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return count;
     }
     public int getNote(String a) {
-        String Query = "SELECT  * FROM " + database_table_notatki+ " WHERE " + "TRESC"  + " LIKE '" +  a + "'";
+        String Query = "SELECT  * FROM " + database_table_notatki+ " WHERE " + "TRESC"  + " LIKE '%" +  a + "%'";
         SQLiteDatabase db = this.getReadableDatabase();
         SQLiteCursor cursor =(SQLiteCursor) db.rawQuery(Query, null);
         int count = cursor.getCount();
         cursor.close();
         return count;
     }
-
+    public int getAllNotes(String a) {
+        String Query = "SELECT  * FROM " + database_table_notatki;
+        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteCursor cursor =(SQLiteCursor) db.rawQuery(Query, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
     public boolean FunAddNote(String tresc) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -101,13 +108,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             return true;
         }
     }
-    public boolean usunWydarzenie(String id){
+    public boolean DeleteEvent(String id){
         SQLiteDatabase db =this.getWritableDatabase();
         if( db.delete(database_table_wydarzenia, "ID=?", new String[]{id })>0)
             return true;
         else return false;
     }
-    public boolean usunNotatke(String id){
+    public boolean DeleteNote(String id){
         SQLiteDatabase db =this.getWritableDatabase();
         if( db.delete(database_table_notatki, "ID=?", new String[]{id })>0)
             return true;
