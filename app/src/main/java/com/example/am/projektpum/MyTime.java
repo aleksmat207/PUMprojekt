@@ -27,10 +27,10 @@ public class MyTime extends AppCompatActivity {
         Button btnAdd=findViewById(R.id.btnAdd);
         Button btnMMup =  findViewById(R.id.btnMMup);
           final Calendar currentTime = Calendar.getInstance();
-        SimpleDateFormat HHFormat = new SimpleDateFormat("HH");
-        SimpleDateFormat MMFormat = new SimpleDateFormat("mm");
-        String myHour=HHFormat.format(currentTime.getTime());
-        String myMinute=MMFormat.format(currentTime.getTime());
+        final SimpleDateFormat hrsFormat = new SimpleDateFormat("HH");
+        final SimpleDateFormat minFormat = new SimpleDateFormat("mm");
+        String myHour=hrsFormat.format(currentTime.getTime());
+        String myMinute=minFormat.format(currentTime.getTime());
         HH.setText(myHour);
         MM.setText(myMinute);final String date;
 
@@ -46,8 +46,6 @@ public class MyTime extends AppCompatActivity {
             public void onClick (View v) {
 
               currentTime.add(Calendar.HOUR_OF_DAY, -1);//24
-                DateFormat hrsFormat = new SimpleDateFormat("HH", Locale.getDefault());
-                DateFormat minFormat = new SimpleDateFormat("mm", Locale.getDefault());
                 String TimeHour = hrsFormat.format(currentTime.getTime());
                 String TimeMinut = minFormat.format(currentTime.getTime());
                 HH.setText(TimeHour);
@@ -60,8 +58,6 @@ public class MyTime extends AppCompatActivity {
             public void onClick (View v) {
 
                 currentTime.add(Calendar.HOUR_OF_DAY, +1);//24
-                DateFormat hrsFormat = new SimpleDateFormat("HH", Locale.getDefault());
-                DateFormat minFormat = new SimpleDateFormat("mm", Locale.getDefault());
                 String TimeHour = hrsFormat.format(currentTime.getTime());
                 String TimeMinut = minFormat.format(currentTime.getTime());
                 HH.setText(TimeHour);
@@ -73,8 +69,6 @@ public class MyTime extends AppCompatActivity {
         btnMMdown.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
                 currentTime.add(Calendar.MINUTE, -1);
-                DateFormat hrsFormat = new SimpleDateFormat("HH", Locale.getDefault());
-                DateFormat minFormat = new SimpleDateFormat("mm", Locale.getDefault());
                 String TimeHour = hrsFormat.format(currentTime.getTime());
                 String TimeMinut = minFormat.format(currentTime.getTime());
                 HH.setText(TimeHour);
@@ -85,8 +79,6 @@ public class MyTime extends AppCompatActivity {
         btnMMup.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v) {
                 currentTime.add(Calendar.MINUTE, +1);
-                DateFormat hrsFormat = new SimpleDateFormat("HH", Locale.getDefault());
-                DateFormat minFormat = new SimpleDateFormat("mm", Locale.getDefault());
                 String TimeHour = hrsFormat.format(currentTime.getTime());
                 String TimeMinut = minFormat.format(currentTime.getTime());
                 HH.setText(TimeHour);
